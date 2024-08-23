@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Video</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Watch Video</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="upload.html">Upload Video</a>
+        </nav>
+    </header>
+    <main>
+        <video controls>
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </main>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const videoFilename = urlParams.get('video');
+        document.querySelector('video source').src = `uploads/${videoFilename}`;
+    </script>
+</body>
+</html>
